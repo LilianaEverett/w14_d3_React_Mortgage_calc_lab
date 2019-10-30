@@ -1,13 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class ApprovalComponent extends Component {
-  render() {
-    return (
-      <div>
-        <p>I am the approver!!!</p>
-      </div>
-    )
+const ApprovalComponent = (props) => {
+  const approved = props.approved;
+  if(approved === null) {
+    return <p></p>;
+  } else {
+    if (approved) {
+      return <h4> Yay approved! </h4>
+    } else {
+      return <h4>Not approved!</h4>
+    }
   }
-}
+};
 
 export default ApprovalComponent
